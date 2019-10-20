@@ -1,0 +1,13 @@
+apiVersion: skaffold/v1beta16
+kind: Config
+metadata:
+  name: gohello
+build:
+  artifacts:
+  - image: hello
+    docker:
+      dockerfile: dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - pod.yaml
